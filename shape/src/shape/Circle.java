@@ -1,6 +1,4 @@
-package shapes;
-
-import shapes.Shape;
+package shape;
 
 /**
  * @author Mr Levin Created 10/16/2017 Lab 2.1 shapes
@@ -17,14 +15,16 @@ public class Circle implements Shape {
 	 * 
 	 * @param radius
 	 */
-	public Circle(int radius) {
+	public Circle(int radius)
+	{
 		// to be implemented by student
+		this.radius = radius;
 	}
 
 	@Override
 	public double calculateArea() {
 		// to be implemented by student
-		return 0.0;
+		return Math.pow(pi*(Circle.radius), 2);
 	}
 
 	@Override

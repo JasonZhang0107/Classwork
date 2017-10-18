@@ -1,11 +1,4 @@
-package shapes;
-
-import shapes.Circle;
-import shapes.Rectangle;
-import shapes.Shape;
-import shapes.ShapeUtilities;
-import shapes.Square;
-
+package shape;
 /**
  * @author Mr Levin Created 10/16/2017
  * 
