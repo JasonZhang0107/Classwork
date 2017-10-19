@@ -2,6 +2,8 @@ package shape;
 
 import java.util.Random;
 
+import com.sun.javafx.geom.Shape;
+
 /**
  * @author Mr Levin Created 10/16/2017 Lab 2.1 shapes
  *
@@ -18,15 +20,16 @@ public class ShapeUtilities {
 		Random rand = new Random();
 		int x = rand.nextInt(3);
 
-		switch (x) {
-		case 0:
-			return new Circle(rand.nextInt(100));
-		case 1:
-			return new Rectangle(rand.nextInt(50), rand.nextInt(50));
-		case 2:
-			return new Square(rand.nextInt(50));
-		default:
-			return new Circle(rand.nextInt(100));
+		switch (x) 
+		{
+			case 0:
+				return new Circle(rand.nextInt(100));
+			case 1:
+				return new Rectangle(rand.nextInt(50), rand.nextInt(50));
+			case 2:
+				return new Square(rand.nextInt(50));
+			default:
+				return new Circle(rand.nextInt(100));
 		}
 
 	}
@@ -37,9 +40,15 @@ public class ShapeUtilities {
 	 * @param shapes
 	 * @return double
 	 */
-	public static double sumArea(Shape[] shapes) {
+	public static double sumArea(Shape[] shapes)
+	{
+		int totalArea = 0;
 		// To be written by student
-		return 0.0;
+		for(int x=0; x<shapes.length; x++)
+		{
+			totalArea = totalArea + shapes[x].calculateArea();
+		}
+		return totalArea;
 	}
 
 	/**
@@ -48,9 +57,15 @@ public class ShapeUtilities {
 	 * @param shapes
 	 * @return double
 	 */
-	public static double sumPerimeter(Shape[] shapes) {
+	public static double sumPerimeter(Shape[] shapes) 
+	{
+		int totalPerimeter = 0;
 		// To be written by student
-		return 0.0;
+		for(int x=0; x<shapes.length; x++)
+		{
+			totalArea = totalArea + shapes[x].calculatePerimeter();
+		}
+		return totalPerimeter;
 	}
 
 }
