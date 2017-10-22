@@ -4,7 +4,8 @@ package shape;
  * @author Mr Levin Created 10/16/2017 Lab 2.1 shapes
  *
  */
-public class Circle implements Shape {
+public class Circle implements Shape
+{
 
 	// fields
 	private int radius;
@@ -34,7 +35,6 @@ public class Circle implements Shape {
 		// to be implemented by student
 		return pi*(radius*2);
 	}
-
 	@Override
 	public String toString() 
 	{
