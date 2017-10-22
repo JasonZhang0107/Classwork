@@ -32,7 +32,7 @@ public class Circle implements Shape {
 	public double calculatePerimeter() 
 	{
 		// to be implemented by student
-		return pi*(r*2);
+		return pi*(radius*2);
 	}
 
 	@Override
