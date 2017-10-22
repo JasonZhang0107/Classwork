@@ -2,8 +2,6 @@ package shape;
 
 import java.util.Random;
 
-import com.sun.javafx.geom.Shape;
-
 /**
  * @author Mr Levin Created 10/16/2017 Lab 2.1 shapes
  *
@@ -42,7 +40,7 @@ public class ShapeUtilities {
 	 */
 	public static double sumArea(Shape[] shapes)
 	{
-		int totalArea = 0;
+		double totalArea = 0;
 		// To be written by student
 		for(int x=0; x<shapes.length; x++)
 		{
@@ -59,11 +57,11 @@ public class ShapeUtilities {
 	 */
 	public static double sumPerimeter(Shape[] shapes) 
 	{
-		int totalPerimeter = 0;
+		double totalPerimeter = 0;
 		// To be written by student
 		for(int x=0; x<shapes.length; x++)
 		{
-			totalArea = totalArea + shapes[x].calculatePerimeter();
+			totalPerimeter = totalPerimeter + shapes[x].calculatePerimeter();
 		}
 		return totalPerimeter;
 	}
