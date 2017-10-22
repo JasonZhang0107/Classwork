@@ -26,7 +26,7 @@ public class Circle implements Shape
 	public double calculateArea() 
 	{
 		// to be implemented by student
-		return Math.pow(pi*(radius), 2);
+		return pi*(Math.pow((radius), 2));
 	}
 
 	@Override

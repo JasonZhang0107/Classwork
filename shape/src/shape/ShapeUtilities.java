@@ -16,7 +16,7 @@ public class ShapeUtilities {
 	 */
 	public static Shape randomShape() {
 		Random rand = new Random();
-		int x = rand.nextInt(3);
+		int x = rand.nextInt(5);
 
 		switch (x) 
 		{
@@ -26,6 +26,10 @@ public class ShapeUtilities {
 				return new Rectangle(rand.nextInt(50), rand.nextInt(50));
 			case 2:
 				return new Square(rand.nextInt(50));
+			case 3:
+				return new Triangle(rand.nextInt(50), rand.nextInt(50));
+			case 4:
+				return new Rhombus(rand.nextInt(50), rand.nextInt(50), rand.nextInt(25));
 			default:
 				return new Circle(rand.nextInt(100));
 		}
