@@ -8,12 +8,12 @@ public class reference
 		doubleArray(shoppingList);
 		
 	}
-	public String doubled(String str1)
+	public static String doubled(String str1)
 	{
 		str1 = str1 + str1;
 		return str1;
 	}
-	public String doubleArray(String[] array)
+	public static String doubleArray(String[] array)
 	{
 		String list = "";
 		for(int x=0; x<array.length; x++)
