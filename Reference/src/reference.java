@@ -4,8 +4,8 @@ public class reference
 
 	public static void main(String[] args) 
 	{
-		String[] shoppingList = {"brown rice", "broccoli", "salmon"};	
-		doubleArray(shoppingList);
+		String[] shoppingList = {"brownrice", "broccoli", "salmon"};	
+		printArray(doubleArray(shoppingList));
 		
 	}
 	public static String doubled(String str1)
@@ -13,13 +13,19 @@ public class reference
 		str1 = str1 + str1;
 		return str1;
 	}
-	public static String doubleArray(String[] array)
+	public static String[] doubleArray(String [] array)
 	{
-		String list = "";
 		for(int x=0; x<array.length; x++)
 		{
-			list = doubled(array[x]);
+			array[x] = doubled(array[x]);
 		}
-		return list;
+		return array;
+	}
+	private static void printArray(Object [] array)
+	{
+		for(Object x: array)
+		{
+			System.out.println(x);
+		}
 	}
 }
