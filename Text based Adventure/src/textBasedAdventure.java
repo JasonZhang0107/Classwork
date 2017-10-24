@@ -1,3 +1,4 @@
-public class textBasedAdventure {
-
+public class textBasedAdventure
+{
+	
 }
