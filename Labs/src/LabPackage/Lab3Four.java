@@ -14,38 +14,30 @@ public class Lab3Four
 	}
 	public static void partition(int[] list1, int front, int back)
 	{
-		int pivotValue = list1[front];
-		int pivotPosition = front;
-		int frontPosition = front;
-		int backPosition = back;
+		int pivotValue = list1[0];
+		int low = 1;
+		int lowValue = list1[low];
+		int high = list1.length-1;
+		int highValue = list1[high];
 		
-		System.out.println("The Pivot is " + pivotValue);
-		while(frontPosition < backPosition)
+		while(low < high)
 		{
-			if(pivotValue > list1[backPosition])
+			while (lowValue < pivotValue && low < high)
 			{
-				if(pivotPosition < backPosition)
-				{
-					swapInt(list1, pivotPosition, backPosition);
-					pivotPosition = backPosition;
-					pivotValue = list1[pivotPosition];
-					frontPosition++;
-					backPosition--;
-				}
-				else
-				{
-					backPosition--;
-				}
+				low++;
+				lowValue = list1[low];
 			}
-			else
+			while(highValue > pivotValue)
 			{
-				swapInt(list1, pivotPosition, backPosition);
-				pivotPosition = backPosition;
-				pivotValue = list1[pivotPosition];
-				frontPosition++;
-				backPosition--;
+				high--;
+				highValue = list1[high];
 			}
+			swapInt(list1, low, high);
+			high--;
 		}
+		System.out.println("High position: " + high + "\nLow Position " + low);
+		swapInt(list1, high, 0);
+		
 	}
 	public static void quickSort(int[] list1, int front, int back)
 	{
