@@ -11,13 +11,14 @@ public class Lab3Four
 		System.out.println(partition(array, 0, array.length-1));
 		*/
 		
+		/*
 		int[] array = {7, 8, 5, 6, 10};
 		quickSort(array, 0, array.length-1);
 		
 		for(int i=0; i<array.length; i++)
 		{
 			System.out.println(array[i]);
-		}
+		}*/
 	}
 	/*
 	 * Description: Partitions an array of numbers based on the first element
@@ -57,6 +58,11 @@ public class Lab3Four
 			
 			return high;
 	}
+	/*
+	 * Description: Recursively calls itself to sort a list
+	 * Parameters: array to sort, starting and ending index
+	 * Return: nothing
+	 */
 	public static void quickSort(int[] list1, int front, int back)
 	{
 		if(front < back)
@@ -67,10 +73,11 @@ public class Lab3Four
 			quickSort(list1, partitionIndex+1, back);
 		}
 	}
-	public static void customSort()
-	{
-		
-	}
+	/*
+	 * Description: Swaps the values of 2 elements at different positions
+	 * Parameters: array to take values from, position one, position two
+	 * Return: nothing, but swaps value
+	 */
 	public static void swapInt(int[] array1, int x, int y)
 	{
 		int temp = array1[x];
