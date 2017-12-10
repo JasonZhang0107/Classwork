@@ -4,44 +4,68 @@ public class Lab3Four
 {
 	public static void main(String[] args)
 	{
-		int[] array = {8, 6, 9, 2, 3};
+		//Partition test code
+		/*
+		int[] array = {7, 8, 5, 6, 10, 2, 9, 11, 3, 2, 15, 13};
 		
-		partition(array, 0, array.length-1);
-		for(int i = 0; i<array.length; i++)
+		System.out.println(partition(array, 0, array.length-1));
+		*/
+		
+		int[] array = {7, 8, 5, 6, 10};
+		quickSort(array, 0, array.length-1);
+		
+		for(int i=0; i<array.length; i++)
 		{
 			System.out.println(array[i]);
 		}
 	}
-	public static void partition(int[] list1, int front, int back)
+	/*
+	 * Description: Partitions an array of numbers based on the first element
+	 * Parameter: Array of numbers, the beginning and ending position of the elements that should be sorted
+	 * Return: The index of the pivot at the end of the partition, array is also partitioned according to the pivot
+	 */
+	public static int partition(int[] list1, int front, int back)
 	{
 		int pivotValue = list1[0];
-		int low = 1;
-		int lowValue = list1[low];
-		int high = list1.length-1;
-		int highValue = list1[high];
+		int low = front + 1;
+		int high = back;
 		
-		while(low < high)
-		{
-			while (lowValue < pivotValue && low < high)
+			while(low < high)
 			{
-				low++;
-				lowValue = list1[low];
+				while ((list1[low] < pivotValue) && (low < high))
+				{
+					low++;
+				}
+				while((list1[high] > pivotValue) && (low < high))
+				{
+					high--;
+				}
+				if(low < high)
+				{
+					swapInt(list1, low, high);
+					high--;
+				}
+				else
+				{
+					if(list1[low] >= pivotValue)
+					{
+						high--;
+					}
+				}
 			}
-			while(highValue > pivotValue)
-			{
-				high--;
-				highValue = list1[high];
-			}
-			swapInt(list1, low, high);
-			high--;
-		}
-		System.out.println("High position: " + high + "\nLow Position " + low);
-		swapInt(list1, high, 0);
-		
+			swapInt(list1, high, 0);
+			
+			return high;
 	}
 	public static void quickSort(int[] list1, int front, int back)
 	{
-		
+		if(front < back)
+		{
+			int partitionIndex = partition(list1, front, back);
+			
+			quickSort(list1, front, partitionIndex-1);
+			quickSort(list1, partitionIndex+1, back);
+		}
 	}
 	public static void customSort()
 	{
